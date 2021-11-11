@@ -1,4 +1,4 @@
-//resize The side bar
+//open and close The sidebar by clicking toggle button
 
 let toggleBtn = document.querySelector('.main .toggle');
 let navigator = document.querySelector('.navigator');
@@ -29,7 +29,7 @@ navigator.addEventListener("click",()=>{
     }
 }) 
 
-//display profile dropdown list
+//hide and display profile dropdown list
 let profile_btn = document.querySelector("header .profile");
 
 profile_btn.addEventListener("click",()=>{
