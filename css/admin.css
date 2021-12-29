@@ -2,6 +2,7 @@
 
 :root {
   --main-color: #b91646;
+  --hover-color: #ac4161;
   --second-color: #dfd8ca;
   --third-color: #105652;
   --fourth-color: #fbf3e4;
@@ -158,19 +159,15 @@ a {
   height: 100%;
   display: flex;
   align-items: center;
-  color: var(--fourth-color);
+  color: var(--black2-color);
 }
 .main header .search input {
   padding: 10px 10px 10px 30px;
   border: none;
-  background-color: var(--main-color);
-  caret-color: var(--fourth-color);
-  color: var(--fourth-color);
+  border: 1px solid var(--grey-color);
   border-radius: 20px;
 }
-.main header .search input::placeholder {
-  color: var(--fourth-color);
-}
+
 .main header .search input:focus {
   outline: none;
 }
@@ -180,11 +177,14 @@ a {
   border: none;
   cursor: pointer;
   position: relative;
+  user-select: none;
+  outline: none;
 }
 .main .profile img {
   max-width: 100%;
   border-radius: 50%;
   object-fit: cover;
+  pointer-events: none;
 }
 .main .profile ul {
   position: absolute;
@@ -194,6 +194,7 @@ a {
   width: 200px;
   background-color: var(--white-color);
   z-index: 10;
+  box-shadow: 0 0 5px var(--grey-color), 0 0 15px var(--grey-color);
 }
 .main .profile ul.open_menu {
   display: block;
@@ -244,6 +245,13 @@ a {
   -moz-box-shadow: 10px 15px 23px -10px var(--grey-color);
   box-shadow: 3px 8px 7px 0px var(--grey-color);
 }
+.content .cards .card:hover {
+  background-color: var(--main-color);
+}
+.content .cards .card:hover span,
+.content .cards .card:hover .card_Icon {
+  color: var(--white-color);
+}
 .content .cards span {
   position: relative;
   display: block;
@@ -275,10 +283,6 @@ a {
   position: relative;
   padding: 20px;
   border-radius: 6px;
-  background-color: var(--white-color);
-  -webkit-box-shadow: 10px 15px 23px -10px var(--grey-color);
-  -moz-box-shadow: 10px 15px 23px -10px var(--grey-color);
-  box-shadow: 3px 8px 7px 0px var(--grey-color);
 }
 .orders .tableHead {
   display: flex;
@@ -297,6 +301,7 @@ a {
   padding: 10px;
   border-radius: 6px;
 }
+
 .orders table {
   width: 100%;
   border-collapse: collapse;
@@ -312,7 +317,7 @@ a {
 .orders .recentOrders table tr {
   border-bottom: 1px solid var(--grey-color);
   color: var(--black-color);
-  transition: var(--second-transiction);
+  transition: var(--main-transition);
 }
 .orders table tbody tr:hover {
   background-color: var(--main-color);
@@ -367,6 +372,7 @@ a {
   display: flex;
   align-items: center;
   padding: 10px;
+  cursor: pointer;
 }
 .orders .recentCustomers li:hover {
   background-color: var(--main-color);

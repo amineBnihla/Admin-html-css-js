@@ -8,7 +8,7 @@ let mainSection = document.querySelector('.main');
  
    toggleBtn.addEventListener('click',()=>{
          if(this.innerWidth > 991){ 
-         console.log(this.innerWidth);  
+        
     navigator.classList.toggle('open');
     mainSection.classList.toggle('open')
     
@@ -33,8 +33,14 @@ navigator.addEventListener("click",()=>{
 let profile_btn = document.querySelector("header .profile");
 
 profile_btn.addEventListener("click",()=>{
-    console.log(profile_btn);
-    console.log(profile_btn.lastElementChild)
+   
 
     profile_btn.lastElementChild.classList.toggle('open_menu');
 });
+document.addEventListener("click",(e)=>{
+    if(!e.target.classList.contains("profile")){
+
+        profile_btn.lastElementChild.classList.remove('open_menu');
+    }
+    
+})
